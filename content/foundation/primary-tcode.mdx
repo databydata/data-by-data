@@ -1,13 +1,26 @@
 ---
-title: "Defining Enterprise Structure"
+title: "Accessing the SAP TM Menu"
 date: "2026-01-10"
-description: "How to map your physical logistics units to SAP TM."
+description: "Understanding the primary transaction codes (T-Codes) and the shift from GUI to NetWeaver Business Client (NWBC)."
 category: "Foundation"
 ---
 
-# Introduction
-In SAP TM, the enterprise structure is the backbone...
+# The Primary Transaction Code
 
-## Key Steps:
-1. Define Purchase Org
-2. Define Group
+Technically, the main area menu transaction code for SAP Transportation Management is: **/SCMTMS/MENU**. Running this in the SAP GUI opens the traditional folder structure containing all standard TM transactions.
+
+Also, SAP TM is a Web Dynpro application, most of the transactions work in browser. 
+
+**Methods to Access**
+1. **NetWeaver Client** : NWBC
+2. **FIORI** : /n/ui2/flp (T-code starting with '/' needs '/n')
+3. **Area Menu**: '/n/SCMTMS/MENU'
+
+## Common Master Data T-Codes in GUI
+
+While most document like **Freight Unit**, **Freight Order** open in **Fiori**, specific master data elements still have direct transaction codes:
+
+* **Locations:** `/SCMTMS/LOC3`
+* **Business Partners:** `BP`
+* **Zone Maintenance:** `/SCMTMS/ZONE`
+* **Transportation Network:** `/SCMTMS/TN`

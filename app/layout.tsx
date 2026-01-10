@@ -35,7 +35,7 @@ export default function RootLayout({
         <Header/>
         
         {/* This "children" represents whatever page or nested layout comes next */}
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow px-6">{children}</main>
         
         <Footer />
       </body>

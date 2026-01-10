@@ -1,13 +1,22 @@
 ---
-title: "Defining Enterprise Structure"
+title: "Embedded and Side-Car TM"
 date: "2026-01-10"
-description: "How to map your physical logistics units to SAP TM."
+description: "Understanding difference between Embedded vs Side Car SAP TM"
 category: "Foundation"
 ---
 
-# Introduction
-In SAP TM, the enterprise structure is the backbone...
+# Difference between Embedded and Side-Car/Decentralized TM
 
-## Key Steps:
-1. Define Purchase Org
-2. Define Group
+The primary difference between Embedded and Side-Car (Decentralized) TM lies in the **Architecture** and **Data Integration**.
+
+## **Architecture**
+1. **Embedded**: It runs on the same S/4HANA instance as the ERP. It relies on same master data created in ERP.
+2. **Side-Car**: It runs on a separate server and requires data replication. It requires CIF to replicate Master Data.
+
+## **Data Integration**
+1. **Embedded**: No CIF is required. It relies on same master data created in ERP. It uses the same master data like Vendors, Customers, Materials as single source of truth
+2. **Side-Car**: It requires CIF to replicate Master Data (Customer, Vendor, Material) from ERP to TM server.
+
+## **Integration with ERP docs**
+1. **Embedded**: It uses **Direct Integration** (Sales order → Freight Unit), meaning OTR/DTR are not relevant documents for internal processes.
+2. **Side-Car**: Must use **OTR/DTR** (Order-based / Delivery-based Transportation Requirements) as shadow objects to represent the ERP orders.

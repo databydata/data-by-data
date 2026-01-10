@@ -14,12 +14,10 @@ export default async function Page({ params }: PageProps) {
   if (!slug) {
     return <div>Slug not found</div>;
   }
-  console.log(slug)
   try {
     const filePath = path.join(process.cwd(), 'content/foundation', `${slug}.mdx`);
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const { data, content } = matter(fileContent);
-    console.log(content);
     return (
       <article className="prose prose-invert max-w-none">
         {/* Header Info */}
@@ -38,8 +36,5 @@ export default async function Page({ params }: PageProps) {
   } catch (error) {
     return <div>You've reached the 0/0 zone. Technically, this page is indeterminate. It exists in my head, but not in this directory. If you're lost, blame the developer (that’s me).</div>;
   }
-
-
-
 
 }
