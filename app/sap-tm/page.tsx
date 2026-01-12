@@ -1,77 +1,61 @@
 import Link from 'next/link';
-import { SAP_TM_MENU } from '@/config/menu';
 
-export default function SAPTMHome() {
+const modules = [
+  {
+    title: 'Foundation',
+    description: 'Master data, network setup, organizational hierarchy, and basic configuration settings.',
+    href: '/sap-tm/foundation',
+    // Using your 'secondary' color for the card background + subtle border
+    className: 'hover:border-brand-start/50 hover:shadow-brand-start/10 hover:shadow-lg', 
+  },
+  {
+    title: 'Order Management',
+    description: 'Forwarding orders, freight units, order routing, and requirement integration.',
+    href: '/sap-tm/order-management',
+    className: 'hover:border-brand-end/50 hover:shadow-brand-end/10 hover:shadow-lg',
+  }
+];
+
+export default function SAPTMPage() {
   return (
-    <div className="space-y-12">
-      
-      {/* Page Header */}
-      <div className="space-y-4 border-b border-border pb-8">
-        <h1 className="text-4xl font-black tracking-tighter text-foreground">
-          SAP TM <span className="text-brand-start">Technical Hub</span>
+    <div className="max-w-5xl mx-auto p-10">
+      {/* Header Section */}
+      <div className="mb-12">
+        <h1 className="text-4xl font-extrabold mb-4 text-foreground">
+          SAP <span className="text-gradient">Transportation Management</span>
         </h1>
-        <p className="text-xl text-muted-foreground max-w-2xl">
-          Deep dives into configuration, ABAP development, and system architecture. 
-          Select a module to begin.
+        <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
+          Welcome to the SAP TM documentation hub. Select a module below to explore configuration guides, technical details, and process flows.
         </p>
       </div>
 
-      {/* RESPONSIVE GRID SYSTEM 
-         1. grid-cols-1 (Mobile)
-         2. md:grid-cols-2 (Tablet)
-         3. lg:grid-cols-3 (Desktop)
-      */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        {SAP_TM_MENU.map((section) => (
-          <div 
-            key={section.group} 
-            className="flex flex-col p-6 rounded-xl bg-card border border-border hover:border-brand-start/50 transition-all duration-300 group"
+      {/* Cards Grid */}
+      <div className="grid md:grid-cols-2 gap-6">
+        {modules.map((mod) => (
+          <Link 
+            key={mod.title} 
+            href={mod.href}
+            className={`
+              group block p-8 rounded-xl border border-border bg-card 
+              transition-all duration-300 relative overflow-hidden
+              ${mod.className}
+            `}
           >
-            {/* Group Title */}
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-lg font-bold text-foreground tracking-wide uppercase">
-                {section.group}
-              </h2>
-              {/* Decorative dash that turns blue on hover */}
-              <div className="w-8 h-1 bg-border group-hover:bg-brand-start transition-colors rounded-full" />
-            </div>
+            {/* Subtle Gradient Glow Effect on Hover (Optional) */}
+            <div className="absolute inset-0 bg-gradient-to-br from-brand-start/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-            {/* List of Links */}
-            <ul className="space-y-3">
-              {section.items.map((item) => (
-                <li key={item.slug}>
-                  <Link 
-                    href={item.url}
-                    className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground hover:translate-x-1 transition-all group/link"
-                  >
-                    {/* SVG ARROW ICON */}
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      fill="none" 
-                      viewBox="0 0 24 24" 
-                      strokeWidth={2} 
-                      stroke="currentColor" 
-                      className="w-3 h-3 text-brand-start opacity-0 group-hover/link:opacity-100 transition-opacity"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                    </svg>
-                    
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            {/* Footer of the Card */}
-            <div className="mt-auto pt-6">
-              <div className="text-xs font-mono text-muted-foreground/50">
-                {section.items.length} TOPICS
-              </div>
+            <h2 className="text-2xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors relative z-10">
+              {mod.title}
+            </h2>
+            <p className="text-muted-foreground leading-relaxed relative z-10">
+              {mod.description}
+            </p>
+            
+            <div className="mt-6 inline-flex items-center font-medium text-sm text-foreground group-hover:text-brand-start transition-colors relative z-10">
+              Explore Module <span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">&rarr;</span>
             </div>
-          </div>
+          </Link>
         ))}
-
       </div>
     </div>
   );

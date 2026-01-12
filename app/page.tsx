@@ -6,12 +6,14 @@ export default function Home() {
 
       {/* 1. HERO SECTION */}
       <section className="space-y-6">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-mono font-medium tracking-wide">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-          </span>
-          BUSINESS CONSULTANT (Not Yet)
+        <div className="mb-8 w-fit">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-start/10 border border-brand-start/20 text-brand-start text-xs font-mono font-medium tracking-wide">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-start opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-start"></span>
+            </span>
+            BUSINESS CONSULTANT <span className='text-foreground'>(Beta Version)</span>
+          </div>
         </div>
 
         <div className="space-y-2">
@@ -29,15 +31,19 @@ export default function Home() {
         <div className="flex gap-4">
           <Link
             href="/sap-tm"
-            className="px-6 py-3 bg-foreground text-background font-bold rounded-lg hover:opacity-90 transition-opacity"
+            className="px-8 py-3 md:py-4 bg-foreground text-background font-bold rounded-lg hover:bg-brand-start hover:text-white transition-all text-center text-sm md:text-base"
           >
-            Explore Technical Hub
+            Explore SAP TM
           </Link>
           <Link
-            href="/about"
-            className="px-6 py-3 bg-secondary border border-border text-secondary-foreground font-medium rounded-lg hover:bg-secondary/80 transition-colors"
+            href="/portfolio"
+            className="px-8 py-3 md:py-4 bg-transparent border border-border text-foreground font-bold rounded-lg hover:border-brand-start transition-all text-center flex items-center justify-center gap-2 group text-sm md:text-base"
           >
-            About Me
+            My Portfolio
+            {/* Tiny Arrow Icon */}
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 group-hover:translate-x-1 transition-transform">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
           </Link>
         </div>
       </section>

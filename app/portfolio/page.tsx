@@ -7,7 +7,7 @@ export default function Portfolio() {
     <div className="max-w-6xl mx-auto space-y-12 py-10">
 
       {/* 1. HERO SECTION */}
-      <section className="max-w-5xl mx-auto px-6 pt-20 flex flex-col">
+      <section className="max-w-5xl mx-auto px-6 flex flex-col">
 
         {/* 1. Animated Badge */}
         <div className="mb-8 w-fit">
@@ -20,19 +20,19 @@ export default function Portfolio() {
           </div>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-2">
           {/* 2. Main Headline */}
-          <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-foreground leading-[1.1]">
+          <h1 className="text-5xl sm:text-4xl md:text-6xl font-black tracking-tighter text-foreground leading-[1.1]">
             Hey, I&apos;m <span className="text-brand-start">Vaibhav</span>.
             <br />
-            <span className="text-muted-foreground block mt-2">
+            <span className="text-muted-foreground block mt-1 md:mt-2">
               Trying to configure my life,
             </span>
 
             {/* 3. The "T-Code" Feature Line */}
-            <span className="flex flex-wrap items-center gap-x-3 mt-1">
+            <span className="flex flex-wrap items-center gap-x-2 md:gap-x-3 mt-1">
               one
-              <span className="inline-block font-mono text-4xl md:text-6xl bg-secondary/80 text-foreground px-4 py-1 rounded-lg border border-border border-b-4 translate-y-[-2px]">
+              <span className="inline-block font-mono text-2xl sm:text-3xl md:text-6xl bg-secondary/80 text-foreground px-2 md:px-4 py-1 rounded-lg border border-border border-b-2 md:border-b-4 translate-y-[-2px]">
                 /T-code
               </span>
               at a time.
@@ -40,19 +40,19 @@ export default function Portfolio() {
           </h1>
 
           {/* 4. Subtext */}
-          <p className="max-w-2xl text-xl text-muted-foreground leading-relaxed">
+          <p className="max-w-2xl text-lg md:text-lg text-muted-foreground leading-relaxed italic">
             <span className="text-foreground font-medium">Technical SAP TM Consultant</span> & maybe a Full Stack Developer.
             Bridging the gap between complex supply chain processes and modern web architecture.
           </p>
         </div>
 
         {/* 4. HERO CTAs (The Buttons) */}
-        <div className="flex flex-col sm:flex-row gap-4 pt-4">
+        <div className="flex flex-col sm:flex-row gap-4 pt-2 md:pt-4">
 
           {/* Primary Button: Resume */}
           <a
             href="/resume.pdf"
-            className="px-8 py-4 bg-foreground text-background font-bold rounded-lg hover:bg-brand-start hover:text-white transition-all text-center"
+            className="px-8 py-3 md:py-4 bg-foreground text-background font-bold rounded-lg hover:bg-brand-start hover:text-white transition-all text-center text-sm md:text-base"
           >
             Download Resume
           </a>
@@ -60,7 +60,7 @@ export default function Portfolio() {
 
           <a
             href="mailto:vaibhavsingh1008@gmail.com"
-            className="px-8 py-4 bg-foreground text-background font-bold rounded-lg hover:bg-brand-start hover:text-white transition-all text-center"
+            className="px-8 py-3 md:py-4 bg-transparent border border-border text-foreground font-bold rounded-lg hover:border-brand-start transition-all text-center flex items-center justify-center gap-2 group text-sm md:text-base"
           >
             Say Hello
           </a>
@@ -68,7 +68,7 @@ export default function Portfolio() {
           {/* Secondary Button: Links to SAP Notes */}
           <Link
             href="/sap-tm"
-            className="px-8 py-4 bg-transparent border border-border text-foreground font-bold rounded-lg hover:border-brand-start transition-all text-center flex items-center justify-center gap-2 group"
+            className="px-8 py-3 md:py-4 bg-transparent border border-border text-foreground font-bold rounded-lg hover:border-brand-start transition-all text-center flex items-center justify-center gap-2 group text-sm md:text-base"
           >
             Read my Notes
             {/* Tiny Arrow Icon */}
@@ -82,52 +82,52 @@ export default function Portfolio() {
       </section>
 
       {/* Work Experience */}
-      <section className='max-w-4xl mx-auto py-5 px-6' id='experience'>
-        <div className="flex items-center gap-4 mb-16">
-          <h2 className="text-3xl md:text-4xl font-black text-foreground">
+      <section className='max-w-4xl mx-auto py-16 px-5 md:px-6' id='experience'>
+        <div className="flex items-center gap-3 md:gap-4 mb-10 md:mb-16">
+          <h2 className="text-2xl md:text-4xl font-black text-foreground">
             01. <span className="text-brand-start">Experience</span>
           </h2>
           <div className="h-px bg-border flex-1" /> {/* Horizontal Line */}
         </div>
-        <div className="relative border-l-2 border-border/50 ml-3 md:ml-6 space-y-20">
+        <div className="relative border-l-2 border-border/50 ml-2 md:ml-6 space-y-12 md:space-y-20">
           {
             EXPERIENCE.map((job, index: number) => {
               const isCurrent = index === 0;
 
               return (
                 <div key={index} className="relative pl-8 md:pl-12 group">
-                  <div className={`absolute -left-[9px] top-2 w-4 h-4 rounded-full border-4 border-background transition-colors duration-300 ${isCurrent ? 'bg-brand-start shadow-[0_0_10px_rgba(56,189,248,0.5)]' : 'bg-muted-foreground/30 group-hover:bg-brand-start'
+                  <div className={`absolute -left-[9px] top-2 w-4 h-4 rounded-full border-4 border-background bg-brand-start transition-transform group-hover:scale-110 duration-300 ${isCurrent ? 'bg-brand-start shadow-[0_0_10px_rgba(56,189,248,0.5)]' : 'bg-muted-foreground/30 group-hover:bg-brand-start'
                     }`} />
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 gap-2">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 md:mb-4 gap-2">
                     <div>
-                      <h3 className="text-2xl font-bold text-foreground flex items-center gap-3">
+                      <h3 className="text-xl md:text-3xl font-bold text-foreground leading-tight">
                         {job.company}
                         {/* The "Latest" Badge */}
                         {isCurrent && (
-                          <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-brand-start/10 text-brand-start border border-brand-start/20 uppercase tracking-widest">
+                          <span className="ml-2 px-2 py-0.5 rounded text-[10px] font-bold bg-brand-start/10 text-brand-start border border-brand-start/20 uppercase tracking-widest">
                             Current
                           </span>
                         )}
                       </h3>
-                      <div className="text-lg font-medium text-muted-foreground mt-1">
+                      <div className="text-base md:text-xl font-medium text-brand-start mt-1">
                         {job.title}
                       </div>
                     </div>
 
-                    <span className="font-mono text-sm text-muted-foreground/80 whitespace-nowrap bg-secondary/50 px-3 py-1 rounded">
+                    <span className="font-mono text-[10px] md:text-sm text-muted-foreground/80 whitespace-nowrap bg-secondary/50 px-2 py-1 md:px-3 rounded self-start mt-1 sm:mt-0">
                       {job.date}
                     </span>
                   </div>
 
-                  <p className="text-muted-foreground mb-6 leading-relaxed max-w-2xl text-lg">
+                  <p className="text-muted-foreground mb-4 md:mb-6 leading-relaxed max-w-2xl text-sm md:text-lg">
                     {job.description}
                   </p>
 
                   {/* Highlights */}
-                  <ul className="space-y-3 mb-6">
+                  <ul className="space-y-2 md:space-y-3 mb-6">
                     {job.highlights.map((item, i) => (
-                      <li key={i} className="flex items-start text-muted-foreground group/item">
-                        <span className="mr-4 mt-2 h-1.5 w-1.5 rounded-full bg-brand-start/50 group-hover/item:bg-brand-start transition-colors shrink-0" />
+                      <li key={i} className="flex items-start gap-2 md:gap-3 text-sm md:text-base text-muted-foreground/90">
+                        <span className="mt-1.5 md:mt-2 h-1.5 w-1.5 rounded-full bg-brand-start shrink-0" />
                         <span className="leading-relaxed">{item}</span>
                       </li>
                     ))}
@@ -138,7 +138,7 @@ export default function Portfolio() {
                     {job.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 text-xs font-medium text-brand-start bg-brand-start/5 border border-brand-start/10 rounded-full hover:bg-brand-start/10 transition-colors cursor-default"
+                        className="px-2 md:px-3 py-1 text-[10px] md:text-xs font-medium text-brand-start bg-brand-start/10 border border-brand-start/20 rounded-full"
                       >
                         {tech}
                       </span>
@@ -188,8 +188,8 @@ export default function Portfolio() {
       <section className="max-w-4xl mx-auto py-20 px-6" id="education">
 
         {/* Section Header */}
-        <div className="flex items-center gap-4 mb-16">
-          <h2 className="text-3xl md:text-4xl font-black text-foreground">
+        <div className="flex items-center gap-3 md:gap-4 mb-10 md:mb-16">
+          <h2 className="text-2xl md:text-4xl font-black text-foreground">
             02. <span className="text-brand-start">Education</span>
           </h2>
           <div className="h-px bg-border flex-1" />
@@ -206,22 +206,22 @@ export default function Portfolio() {
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 gap-2">
                 <div>
                   {/* Degree Name */}
-                  <h3 className="text-2xl font-bold text-foreground">
+                  <h3 className="text-xl md:text-3xl font-bold text-foreground leading-tight">
                     {edu.degree}
                   </h3>
                   {/* Institution Name */}
-                  <div className="text-lg font-medium text-brand-start mt-1">
+                  <div className="text-base md:text-xl font-medium text-brand-start mt-1">
                     {edu.institution}
                   </div>
                 </div>
 
                 {/* Date Badge */}
-                <span className="font-mono text-sm text-muted-foreground/80 whitespace-nowrap bg-secondary/50 px-3 py-1 rounded">
+                <span className="font-mono text-[10px] md:text-sm text-muted-foreground/80 whitespace-nowrap bg-secondary/50 px-2 py-1 md:px-3 rounded self-start mt-1 sm:mt-0">
                   {edu.date}
                 </span>
               </div>
 
-              <p className="text-muted-foreground mb-6 leading-relaxed max-w-2xl text-lg">
+              <p className="text-muted-foreground mb-4 md:mb-6 leading-relaxed max-w-2xl text-sm md:text-lg">
                 {edu.description}
               </p>
 
@@ -230,7 +230,7 @@ export default function Portfolio() {
                 {edu.coursework.map((subject) => (
                   <span
                     key={subject}
-                    className="px-3 py-1 text-xs font-medium text-muted-foreground bg-secondary/30 border border-border rounded-full"
+                    className="px-3 py-1 text-[10px] md:text-xs font-medium text-muted-foreground bg-secondary/30 border border-border rounded-full"
                   >
                     {subject}
                   </span>
@@ -247,11 +247,11 @@ export default function Portfolio() {
 
         {/* 2. Context Text: Why should they click? */}
         <div className="flex flex-col items-start">
-          <h3 className="text-4xl font-bold text-foreground mb-6">
+          <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
             Get in Touch
           </h3>
 
-          <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mb-10">
+          <p className="text-sm md:text-lg text-muted-foreground leading-relaxed max-w-2xl mb-10">
             I am currently open to discussing new opportunities or SAP TM consulting projects.
             Whether you have a question or just want to say hi, my inbox is open!
           </p>
@@ -260,7 +260,7 @@ export default function Portfolio() {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="mailto:vaibhavsingh1008@gmail.com"
-              className="px-8 py-4 bg-foreground text-background font-bold rounded-lg hover:bg-brand-start hover:text-white transition-all text-center"
+              className="px-8 py-3 md:py-4 bg-foreground text-background font-bold rounded-lg hover:bg-brand-start hover:text-white transition-all text-center text-sm md:text-base"
             >
               Say Hello
             </a>

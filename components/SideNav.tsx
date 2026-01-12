@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { SAP_TM_MENU } from '@/config/menu';
+import { FOUNDATION_MENU } from '@/config/menu';
 
 export default function SideNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,9 +48,9 @@ export default function SideNav() {
       `}>
         {/* Your menu content here... */}
         <div className="space-y-8">
-          {SAP_TM_MENU.map((section) => (
+          {FOUNDATION_MENU.map((section) => (
             <div key={section.group}>
-              <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-4">
+              <h3 className="text-xs font-bold text-foreground uppercase tracking-widest mb-4">
                 {section.group}
               </h3>
               <ul className="space-y-3">

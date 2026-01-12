@@ -1,21 +1,28 @@
 import fs from 'fs';
 import path from 'path';
-import matter from 'gray-matter'; // npm install gray-matter
+import matter from 'gray-matter';
+import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc'; // npm install next-mdx-remote
 
 interface PageProps {
-  params: Promise<{ slug: string }>
+  params: Promise<{
+    category: string,
+    slug: string
+  }>
 }
 
 
 export default async function Page({ params }: PageProps) {
-  const { slug } = await params;
+  const { category, slug } = await params;
 
   if (!slug) {
     return <div>Slug not found</div>;
   }
   try {
-    const filePath = path.join(process.cwd(), 'content/foundation', `${slug}.mdx`);
+    const filePath = path.join(process.cwd(), 'content/foundation', category, `${slug}.mdx`);
+    if (!fs.existsSync(filePath)) {
+      notFound();
+    }
     const fileContent = fs.readFileSync(filePath, 'utf8');
     const { data, content } = matter(fileContent);
     return (
@@ -34,6 +41,7 @@ export default async function Page({ params }: PageProps) {
       </article>
     );
   } catch (error) {
+    console.log(error)
     return <div>You've reached the 0/0 zone. Technically, this page is indeterminate. It exists in my head, but not in this directory. If you're lost, blame the developer (that’s me).</div>;
   }
 
