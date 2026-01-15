@@ -31,7 +31,6 @@ export default async function Page({ params }: PageProps) {
         <header className="mb-8 border-b border-border pb-8">
           <p className="text-brand-start font-mono text-sm mb-2">{data.category}</p>
           <h1 className="text-4xl font-black tracking-tighter">{data.title}</h1>
-          <p className="text-muted-foreground mt-4">{data.description}</p>
         </header>
 
         {/* Main Blog Content */}

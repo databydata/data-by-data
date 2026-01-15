@@ -1,0 +1,24 @@
+---
+title: "What is the relationship between an ERP Plant and a TM Location?"
+category: "Basics"
+---
+
+# Plant in TM
+An ERP plant is mapped 1:1 to a **TM location** (/n/scmtms/loc3).  
+
+
+### Plants act as anchor for the transport:
+* **Outbound Process:** The plant is the source location.  
+* **Inbound Process:** The plant is the destination location.
+
+### Shipping point connection:
+**In SAP TM**, we often map the ERP **Shipping point** to the TM location as the plant. This ensures that when ERP order is created with specific shipping point, TM knows where the goods are starting from.  
+
+
+In case of **ASR (Advanced Shipping and Receiving)**, shipping point is used as the destination location in freight unit.  
+
+
+For **Non-ASR**, if you want to use shipping point as destination location you can switch on **Improved location determination** check box in Logistic Integration Profile.  
+
+
+For MM scheduling agreements, if address is changed in the address tab, and it differs from the storage locations' address, a new **one time location** will be created as the destination location in freight unit.

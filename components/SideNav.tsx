@@ -1,11 +1,25 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { FOUNDATION_MENU } from '@/config/menu';
+import { FOUNDATION_MENU, ORDER_MANAGEMENT_MENU } from '@/config/menu';
+import { usePathname } from 'next/navigation';
+
 
 export default function SideNav() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const activeMenu = useMemo(() => {
+    if (pathname.startsWith('/sap-tm/order-management')) {
+      return ORDER_MANAGEMENT_MENU;
+    }
+    if (pathname.startsWith('/sap-tm/foundation')) {
+      return FOUNDATION_MENU;
+    }
+    // Default fallback (optional: return empty array or a default menu)
+    return FOUNDATION_MENU;
+  }, [pathname]);
 
   return (
     <>
@@ -14,7 +28,7 @@ export default function SideNav() {
         <span className="text-xs font-bold tracking-widest uppercase text-muted-foreground">
           SAP TM Menu
         </span>
-        <button 
+        <button
           onClick={() => setIsOpen(!isOpen)}
           className="p-2 border border-border rounded-md hover:bg-secondary transition-colors"
           aria-label="Toggle Menu"
@@ -33,9 +47,9 @@ export default function SideNav() {
 
       {/* 2. BACKDROP */}
       {isOpen && (
-        <div 
-          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[70] md:hidden" 
-          onClick={() => setIsOpen(false)} 
+        <div
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[70] md:hidden"
+          onClick={() => setIsOpen(false)}
         />
       )}
 
@@ -48,23 +62,34 @@ export default function SideNav() {
       `}>
         {/* Your menu content here... */}
         <div className="space-y-8">
-          {FOUNDATION_MENU.map((section) => (
+          {activeMenu.map((section) => (
             <div key={section.group}>
               <h3 className="text-xs font-bold text-foreground uppercase tracking-widest mb-4">
                 {section.group}
               </h3>
               <ul className="space-y-3">
-                {section.items.map((item) => (
-                  <li key={item.slug}>
-                    <Link 
-                      href={item.url}
-                      onClick={() => setIsOpen(false)}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors block py-1"
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
+                {section.items.map((item) => {
+                  const isActive = pathname === item.url;
+
+                  return (
+                    <li key={item.slug}>
+                      <Link
+                        href={item.url}
+                        onClick={() => setIsOpen(false)}
+                        className={`
+                          block py-1.5 px-2 text-sm rounded-md transition-all duration-200
+                          break-words whitespace-normal leading-relaxed
+                          ${isActive
+                            ? "bg-brand-start/10 text-brand-start font-medium border-l-2 border-brand-start" // Active Style
+                            : "text-muted-foreground hover:text-foreground hover:bg-secondary/50 border-l-2 border-transparent" // Inactive Style
+                          }
+                        `}
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}

@@ -1,17 +1,16 @@
 ---
-title: "Embedded and Side-Car TM"
-date: "2026-01-10"
+title: "What is the difference between an embedded TM and a side-car TM?"
 description: "Understanding difference between Embedded vs Side Car SAP TM"
-category: "Foundation"
+category: "Basics"
 ---
 
-# Difference between Embedded and Side-Car/Decentralized TM
+# Embedded and Side-Car/Decentralized TM
 
 The primary difference between Embedded and Side-Car (Decentralized) TM lies in the **Architecture** and **Data Integration**.
 
 ## **Architecture**
-1. **Embedded**: It runs on the same S/4HANA instance as the ERP. It relies on same master data created in ERP.
-2. **Side-Car**: It runs on a separate server and requires data replication. It requires CIF to replicate Master Data.
+1. **Embedded**: It runs on the same S/4HANA instance as the ERP and relies on same master data created in ERP.
+2. **Side-Car**: It runs on a separate server and requires data replication. It also requires CIF to replicate Master Data.
 
 ## **Data Integration**
 1. **Embedded**: No CIF is required. It relies on same master data created in ERP. It uses the same master data like Vendors, Customers, Materials as single source of truth

@@ -1,13 +1,51 @@
 ---
-title: "Defining Enterprise Structure"
-date: "2026-01-10"
-description: "How to map your physical logistics units to SAP TM."
-category: "Foundation"
+title: "Define a Business Partner in the context of SAP TM."
+category: "Basics"
 ---
 
-# Introduction
-In SAP TM, the enterprise structure is the backbone...
+# Business Partner
 
-## Key Steps:
-1. Define Purchase Org
-2. Define Group
+In SAP S/4HANA TM, the Business Partner (BP) is the central master data object used to represent any person or organization we interact with. It replaces the legacy "Customer" and "Vendor" master data objects.
+
+## In context of SAP TM, a business partner can perform specific role, such as:
+**Carrier:** The vendor transporting your goods **(Role: CRM010)**.  
+
+
+**Shipper:** The party that orders transportation service and arranges for transportation.
+
+
+**Consignor** The entity responsible for physically handing over the goods to the carrier.  
+
+
+**Consignee** The party which receives the goods (Customer mostly).
+
+
+**Driver** The individual driving the truck (modeled as a BP Person).
+
+## Understanding differences "Shipper" vs "Consignor"
+In Most cases **Shipper** and **Consignor** are same but in some cases they can differ.
+
+#### **Case A** Standard stock (Both Parties are Same)
+<br/>
+**You order laptop from lenovo.com. Lenovo has the laptop in their own warehouse.**  
+
+
+**Shipper:** Lenovo  
+**Consignor:** Lenovo warehouse  
+**Result:** Shipper = Consignor  
+
+
+#### **Case B** Drop Shipment (Both Parties are Different)
+<br/>
+**You order laptop bag from lenovo.com but lenove is not the manufacturer of bag. so, they buy it from company "ABC" and asks them to ship the bag directly to you, but pays for the shipment cost.**  
+
+**Shipper:** Lenovo  
+**Consignor:** ABC company  
+**Result:** Shipper ≠ Consignor  
+
+Note: in blind shipment Lenovo will hide the name of ABC company and display their name in "Bill of Landing"
+
+
+
+
+
