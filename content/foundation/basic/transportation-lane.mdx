@@ -1,0 +1,28 @@
+---
+title: "Define Transportation Lane"
+category: "Basics"
+---
+
+## Transportation Lane (/scmtms/tl5):
+A transportation lane represents a direct, valid connection between two locations (or Zones) in you supply chain network.  
+
+It tells the system that "Yes, it is possible to move goods from location A to B".  
+
+If no **transportation lane** exists between two locations, VSR optimizer fails to plan the shipment because it assumes there is no valid path.  
+
+### Note: Manual planning is still possible.
+
+## Lane defines:
+**Source Location:** Start location.  
+
+**Destination Location:** End location.
+
+**Means of Transport:** Type of vehicle allowed on the lane.  
+
+**Carriers:** List of carriers operates the lane.  
+
+**Transit Time & Distance:** Distance of the lane and time taken to move the shipment.  
+
+**Planning cost:** A "cost penalty" used by the optimizer to decide which lane to use for planning. 
+
+We define strategy used for carrier selection based on **Priority & Cost**. You can also 
