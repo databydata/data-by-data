@@ -1,0 +1,65 @@
+---
+title: "A Simple Supply Chain Scenario: From Order to Delivery"
+category: "Basics"
+---
+
+# A Simple Supply Chain Scenario: From Order to Delivery
+
+In the world of logistics, managing inbound and outbound operations is a complex dance of coordination. As a **Store Clerk**, you are often at the center of this process, ensuring goods move efficiently from the warehouse to the customer's door.
+
+Let’s walk through a typical supply chain scenario to understand the lifecycle of an order.
+
+## Phase 1: Order Processing & Planning
+
+The journey begins with the customer.
+
+1.  **Order Placement**: A customer places a request via your **CRM portal**.
+2.  **Sales Order Creation**: As soon as you receive the **Purchase Order (PO)** from the customer, you create a corresponding **Sales Order** in your system.
+3.  **Inventory Check**: Before proceeding, the system checks if the required stock is available in the warehouse.
+4.  **Scheduling**: Once stock is confirmed, a **Delivery Date** is finalized.
+
+## Phase 2: Transportation Planning
+
+With the dates set, the focus shifts to how the goods will move.
+
+* **Shipment Planning**: You plan the shipment based on the finalized delivery date.
+* **Carrier Selection**: A carrier is selected to transport the goods. This selection can happen via:
+    * Subcontracting
+    * Tendering
+    * Manual Selection
+* **Cost Finalization**: The freight cost is agreed upon and finalized with the carrier.
+
+## Phase 3: Warehouse Execution
+
+Now, the physical work begins inside the facility.
+
+1.  **Picking**: The items are picked from the warehouse shelves.
+2.  **Packing**: The goods are brought to the packing area, where they are packed, and a final **Handling Unit (HU)** is created.
+3.  **Staging**: The packed material is moved to the **Shipping Point**, ready for pickup.
+
+## Phase 4: Yard & Dock Management
+
+Coordination extends outside the warehouse walls to the yard.
+
+* **Truck Arrival**: The carrier is instructed to bring the truck to a dedicated space in the yard.
+* **Loading**: The driver brings the truck to the assigned **Door/Shipping Point**.
+* **Departure**: Loading operations are carried out, documents are handed over, and the truck leaves the premise.
+
+## Phase 5: Transit & Delivery
+
+Once the truck is on the road, communication is key.
+
+* **Exception Handling**: If the truck faces delays due to unforeseen reasons (e.g., natural calamity or traffic), the driver communicates this delay to all relevant parties instantly.
+* **Proof of Delivery (POD)**: The driver arrives at the customer’s location, delivers the package, and generates a Proof of Delivery.
+* **Settlement**: Finally, the payment is made to the carrier for their services.
+
+
+
+## The Technology Stack: SAP Solutions
+
+To manage this end-to-end flow efficiently, SAP provides specialized solutions for each distinct area of the supply chain:
+
+**Warehouse** **SAP EWM** (Extended Warehouse Management) Manages picking, packing, and internal stock movements.  
+**Transportation** **SAP TM** (Transportation Management) Handles carrier selection, freight planning, and cost calculation.  
+**Yard** **SAP YL** (Yard Logistics) Manages truck check-ins, dock assignments, and yard movements.  
+**Collaboration** **SAP BN4L** (Business Network for Logistics) Facilitates carrier subcontracting, tendering, and real-time driver communication.

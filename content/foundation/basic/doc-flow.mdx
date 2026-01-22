@@ -1,0 +1,201 @@
+---
+title: "Shipper vs Retailer Models & SAP TM Document Flows"
+category: "Basics"
+---
+
+## Business Models
+
+Understanding the role of the business entity is the first step in configuring the supply chain.
+
+### Shippers
+Shippers are companies that **manufacture** goods and sell them directly in the market. They own the production lifecycle and manage the outbound logistics of their finished products.
+
+### Retailers
+Retailers do not manufacture goods. Instead, they **procure** products from different manufacturers and sell them in the market. Their logistics focus is heavily on inbound procurement and store distribution.
+
+---
+
+## Document Flow in SAP TM
+
+The following diagrams illustrate the document lifecycle for Transport Management, covering both Order-based and Delivery-based planning scenarios.
+
+### 1. Order Based Planning
+In Order-based planning, the transportation requirement (Freight Unit) is generated directly from the Sales Order or Purchase Order, *before* the delivery document exists.
+
+#### **Outbound Flow (Order Based)**
+
+```
+
+    Sales Order(ECC/S4)
+    |
+    |
+    (Check if relevent for Transport Planning)
+    |
+    |
+    Freight Unit (SAP TM)
+    |
+    |
+    Freight Order/Booking Doc (SAP TM)
+    |
+    |
+    Delivery Proposal (SAP TM)
+    |
+    |
+    Outbound Delivery Doc Created (ECC/S4)
+    |
+    |
+    Subcontracting
+    |
+    |
+    Charges and Settlement (SAP TM)
+    |
+    |
+    Carrier Invoice (SAP TM)
+    |
+    |
+    Service PO (ECC/S4)
+    |
+    |
+    Service Entry Sheet (ECC/S4)
+    |
+    |
+    MIRO (ECC/S4)
+    |
+    |
+    Customer Billing (ECC/S4)
+
+
+```
+
+
+#### **Inbound Flow (Order Based):**
+
+```
+
+    Purchase Order(ECC/S4)
+    |
+    |
+    (Check if relevent for Transport Planning)
+    |
+    |
+    Freight Unit (SAP TM)
+    |
+    |
+    Freight Order/Booking Doc (SAP TM)
+    |
+    |
+    Delivery Proposal (SAP TM)
+    |
+    |
+    Ibbound Delivery Doc Created (ECC/S4)
+    |
+    |
+    Subcontracting
+    |
+    |
+    Charges and Settlement (SAP TM)
+    |
+    |
+    Carrier Invoice (SAP TM)
+    |
+    |
+    Service PO (ECC/S4)
+    |
+    |
+    Service Entry Sheet (ECC/S4)
+    |
+    |
+    MIRO (ECC/S4)
+
+
+```
+
+### **Delivery Based Planning:**    
+
+In Delivery-based planning, the logistics process starts only after the Delivery Document has been generated in the ERP system.
+
+
+#### **Outbound Flow (Delivery Based):**
+
+```
+
+    Sales Order(ECC/S4)
+    |
+    |
+    Delivery doc is created (ECC/S4)
+    |
+    | 
+    (Check if relevent for Transport Planning)
+    |
+    |
+    Freight Unit (SAP TM)
+    |
+    |
+    Freight Order/Booking Doc (SAP TM)
+    |
+    |
+    Outbound Delivery Doc Created (ECC/S4)
+    |
+    |
+    Subcontracting
+    |
+    |
+    Charges and Settlement (SAP TM)
+    |
+    |
+    Carrier Invoice (SAP TM)
+    |
+    |
+    Service PO (ECC/S4)
+    |
+    |
+    Service Entry Sheet (ECC/S4)
+    |
+    |
+    MIRO (ECC/S4)
+    |
+    |
+    Customer Billing (ECC/S4)
+
+
+```
+
+#### **Inbound Flow (Delivery Based):**
+
+```
+
+    Purchase Order(ECC/S4)
+    |
+    |
+    Inbound Delivery (ECC/S4)
+    |
+    |
+    (Check if relevent for Transport Planning)
+    |
+    |
+    Freight Unit (SAP TM)
+    |
+    |
+    Freight Order/Booking Doc (SAP TM)
+    |
+    |
+    Subcontracting
+    |
+    |
+    Charges and Settlement (SAP TM)
+    |
+    |
+    Carrier Invoice (SAP TM)
+    |
+    |
+    Service PO (ECC/S4)
+    |
+    |
+    Service Entry Sheet (ECC/S4)
+    |
+    |
+    MIRO (ECC/S4)
+
+
+```
+
