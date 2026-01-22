@@ -27,8 +27,8 @@
   
   /* --- YOUR NEW BRAND GRADIENT (Data Theme) --- */
   /* A sharp Cyan-to-Blue gradient that pops on black */
-  --brand-start: #6366f1; /* Cyan-400 */
-  --brand-end: #f97316;   /* Blue-500 */
+  --brand-start: #22d3ee; /* Cyan-400 */
+  --brand-end: #3b82f6;   /* Blue-500 */
   
   /* Accents */
   --accent: #27272a;
@@ -114,6 +114,7 @@
 
   /* 3. Block Code (The Diagrams) - CHANGE THIS */
   .prose pre code {
+    /* Changed from text-muted-foreground to text-brand-start */
     @apply text-brand-start bg-transparent p-0 border-none;
   }
 

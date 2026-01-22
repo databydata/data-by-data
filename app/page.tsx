@@ -71,7 +71,7 @@ export default function Home() {
           </Link>
 
           {/* Card 2: Order Management */}
-          <Link href="/sap-tm/order-management" className="group block space-y-4 p-6 rounded-xl bg-card border border-border hover:border-brand-start/50 transition-all">
+          <Link href="/sap-tm/foundation" className="group block space-y-4 p-6 rounded-xl bg-card border border-border hover:border-brand-start/50 transition-all">
             <div className="h-10 w-10 bg-purple-500/10 rounded-lg flex items-center justify-center text-purple-400 group-hover:scale-110 transition-transform">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
             </div>
@@ -82,7 +82,7 @@ export default function Home() {
           </Link>
 
           {/* Card 3: Planning & Optimization */}
-          <Link href="/sap-tm/planning" className="group block space-y-4 p-6 rounded-xl bg-card border border-border hover:border-brand-start/50 transition-all">
+          <Link href="/sap-tm/foundation" className="group block space-y-4 p-6 rounded-xl bg-card border border-border hover:border-brand-start/50 transition-all">
             <div className="h-10 w-10 bg-emerald-500/10 rounded-lg flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 6.75V15m6-10.5v.115m-6 .115V3m6 1.5V18m-6-5.25v.115m6-1.115V21m-6-4.5v.115" />
@@ -112,7 +112,7 @@ export default function Home() {
           </Link>
 
           {/* Card 2: Charge Management & Settlement */}
-          <Link href="/sap-tm/order-management" className="group block space-y-4 p-6 rounded-xl bg-card border border-border hover:border-brand-start/50 transition-all">
+          <Link href="/sap-tm/foundation" className="group block space-y-4 p-6 rounded-xl bg-card border border-border hover:border-brand-start/50 transition-all">
             <div className="h-10 w-10 bg-purple-500/10 rounded-lg flex items-center justify-center text-purple-400 group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75m0 3v.75m0 3v.75m0 3v.75m0 3V15h16.5V4.5h-16.5ZM12 6.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM12 12.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5ZM12 18.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" />
@@ -125,7 +125,7 @@ export default function Home() {
           </Link>
 
           {/* Card 3: Development */}
-          <Link href="/sap-tm/development" className="group block space-y-4 p-6 rounded-xl bg-card border border-border hover:border-brand-start/50 transition-all">
+          <Link href="/sap-tm/foundation" className="group block space-y-4 p-6 rounded-xl bg-card border border-border hover:border-brand-start/50 transition-all">
             <div className="h-10 w-10 bg-emerald-500/10 rounded-lg flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />

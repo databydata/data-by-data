@@ -7,12 +7,6 @@ const modules = [
     href: '/sap-tm/foundation',
     // Using your 'secondary' color for the card background + subtle border
     className: 'hover:border-brand-start/50 hover:shadow-brand-start/10 hover:shadow-lg', 
-  },
-  {
-    title: 'Order Management',
-    description: 'Forwarding orders, freight units, order routing, and requirement integration.',
-    href: '/sap-tm/order-management',
-    className: 'hover:border-brand-end/50 hover:shadow-brand-end/10 hover:shadow-lg',
   }
 ];
 
